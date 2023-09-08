@@ -47,7 +47,11 @@ export default function Home() {
             Add a param in the url with the url to redirect to, for example:
           </p>
           <br />
-          <code>http://localhost:3000/?redirectTo=https://google.com</code>
+          <code>
+            <a href="https://payment-test-olx.vercel.app/?redirectTo=https://google.com">
+              https://payment-test-olx.vercel.app/?redirectTo=https://google.com
+            </a>
+          </code>
           <br />
           <br />
           <p>
@@ -56,7 +60,9 @@ export default function Home() {
           </p>
           <br />
           <code>
-            http://localhost:3000/?redirectTo=https://google.com&redirectAfter=5
+            <a href="https://payment-test-olx.vercel.app/?redirectTo=https://google.com&redirectAfter=5">
+              https://payment-test-olx.vercel.app/?redirectTo=https://google.com&redirectAfter=5
+            </a>
           </code>
         </div>
       )}
