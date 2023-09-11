@@ -60,6 +60,7 @@ export default function Home() {
           <code>
             <a href="https://payment-test-olx.vercel.app/?redirectTo=https://google.com">https://payment-test-olx.vercel.app/?back=true</a>
           </code>
+          <br />
         </div>
       )}
 
