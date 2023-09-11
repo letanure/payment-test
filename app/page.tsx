@@ -61,12 +61,13 @@ export default function Home() {
             <a href="https://payment-test-olx.vercel.app/?redirectTo=https://google.com">https://payment-test-olx.vercel.app/?back=true</a>
           </code>
           <br />
+          <br />
         </div>
       )}
 
       {!redirectToIsValidUrl && (
         <div>
-          <p>Add a param in the url with the url to redirect to, for example:</p>
+          <p>Add a param in the URL <b>redirectTo</b> with the url to redirect to, for example:</p>
           <br />
           <code>
             <a href="https://payment-test-olx.vercel.app/?redirectTo=https://google.com">
@@ -75,7 +76,7 @@ export default function Home() {
           </code>
           <br />
           <br />
-          <p>and optionally a param with the number of seconds to wait before redirecting, for example:</p>
+          <p>and optionally a param <b>redirectAfter</b> with the number of seconds to wait before redirecting, for example:</p>
           <br />
           <code>
             <a href="https://payment-test-olx.vercel.app/?redirectTo=https://google.com&redirectAfter=5">
