@@ -17,10 +17,16 @@ function isValidHttpUrl(string: string) {
 export default function Home() {
   const searchParams = useSearchParams();
   const redirectTo = searchParams.get("redirectTo") || "";
+  const back = searchParams.get("back") || false;
   const redirectToIsValidUrl = isValidHttpUrl(redirectTo);
   const redirectAfter = Number(searchParams.get("redirectAfter")) || 2;
 
-  console.log("redirectToIsValidUrl1", redirectToIsValidUrl, redirectAfter);
+  if(back){
+    setTimeout(() => {
+      history.back()
+    }, redirectAfter * 1000);
+  }
+
   if (redirectToIsValidUrl) {
     setTimeout(() => {
       window.location.assign(redirectTo);
@@ -35,12 +41,33 @@ export default function Home() {
 
       <br />
 
+      {back && (
+        <p>
+          Simulate  <b>browser back</b> after <b>{redirectAfter}</b>{" "}
+          seconds
+        </p>
+      )}
+
       {redirectToIsValidUrl && redirectTo && (
         <p>
           Redirecting to <b>{redirectTo}</b> after <b>{redirectAfter}</b>{" "}
           seconds
         </p>
       )}
+      {!back && (
+        <div>
+          <p>
+            Add a param in the URL <b>back</> to simulate the browser back button.
+          </p>
+          <br />
+          <code>
+            <a href="https://payment-test-olx.vercel.app/?redirectTo=https://google.com">
+              https://payment-test-olx.vercel.app/?back=true
+            </a>
+          </code>
+        </div>
+      )}
+      
       {!redirectToIsValidUrl && (
         <div>
           <p>
