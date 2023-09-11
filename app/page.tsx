@@ -58,7 +58,7 @@ export default function Home() {
           </p>
           <br />
           <code>
-            <a href="https://payment-test-olx.vercel.app/?redirectTo=https://google.com">https://payment-test-olx.vercel.app/?back=true</a>
+            <a href="https://payment-test-olx.vercel.app/?back=true">https://payment-test-olx.vercel.app/?back=true</a>
           </code>
           <br />
           <br />
