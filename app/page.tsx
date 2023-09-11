@@ -21,9 +21,9 @@ export default function Home() {
   const redirectToIsValidUrl = isValidHttpUrl(redirectTo);
   const redirectAfter = Number(searchParams.get("redirectAfter")) || 2;
 
-  if(back){
+  if (back) {
     setTimeout(() => {
-      history.back()
+      history.back();
     }, redirectAfter * 1000);
   }
 
@@ -35,44 +35,37 @@ export default function Home() {
 
   return (
     <main className="content">
-      <h1 className="mb-2 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-        Fake Payment
-      </h1>
+      <h1 className="mb-2 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Fake Payment</h1>
 
       <br />
 
       {back && (
         <p>
-          Simulate  <b>browser back</b> after <b>{redirectAfter}</b>{" "}
-          seconds
+          Simulate <b>browser back</b> after <b>{redirectAfter}</b> seconds
         </p>
       )}
 
       {redirectToIsValidUrl && redirectTo && (
         <p>
-          Redirecting to <b>{redirectTo}</b> after <b>{redirectAfter}</b>{" "}
-          seconds
+          Redirecting to <b>{redirectTo}</b> after <b>{redirectAfter}</b> seconds
         </p>
       )}
+
       {!back && (
         <div>
           <p>
-            Add a param in the URL <b>back</> to simulate the browser back button.
+            Add a param in the URL <b>back</b> to simulate the browser back button.
           </p>
           <br />
           <code>
-            <a href="https://payment-test-olx.vercel.app/?redirectTo=https://google.com">
-              https://payment-test-olx.vercel.app/?back=true
-            </a>
+            <a href="https://payment-test-olx.vercel.app/?redirectTo=https://google.com">https://payment-test-olx.vercel.app/?back=true</a>
           </code>
         </div>
       )}
-      
+
       {!redirectToIsValidUrl && (
         <div>
-          <p>
-            Add a param in the url with the url to redirect to, for example:
-          </p>
+          <p>Add a param in the url with the url to redirect to, for example:</p>
           <br />
           <code>
             <a href="https://payment-test-olx.vercel.app/?redirectTo=https://google.com">
@@ -81,10 +74,7 @@ export default function Home() {
           </code>
           <br />
           <br />
-          <p>
-            and optionally a param with the number of seconds to wait before
-            redirecting, for example:
-          </p>
+          <p>and optionally a param with the number of seconds to wait before redirecting, for example:</p>
           <br />
           <code>
             <a href="https://payment-test-olx.vercel.app/?redirectTo=https://google.com&redirectAfter=5">
